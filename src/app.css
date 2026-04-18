@@ -1,0 +1,166 @@
+/* @import "@fontsource/ubuntu/300-latin.css";
+@import "@fontsource/ubuntu/400-latin.css";
+@import "@fontsource/ubuntu/500-latin.css";
+@import "@fontsource/ubuntu/700-latin.css"; */
+
+/* ubuntu-latin-ext-300-normal */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-300-normal.woff2)
+      format("woff2"),
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-300-normal.woff)
+      format("woff");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ubuntu-latin-ext-400-normal */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-400-normal.woff2)
+      format("woff2"),
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-400-normal.woff)
+      format("woff");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ubuntu-latin-ext-500-normal */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-500-normal.woff2)
+      format("woff2"),
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-500-normal.woff)
+      format("woff");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ubuntu-latin-ext-700-normal */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-700-normal.woff2)
+      format("woff2"),
+    url(@fontsource/ubuntu/files/ubuntu-latin-ext-700-normal.woff)
+      format("woff");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --bg: #16161a; /* Negro obsidiana */
+  --text: #e5e5e5; /* Blanco roto / Plata */
+  --text-muted: #a1a1a1; /* Gris medio */
+  --border: #262626; /* Gris muy oscuro para divisiones sutiles */
+  --accent: #ffffff; /* Blanco puro para acciones */
+  --font-main: "Ubuntu", sans-serif;
+
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Selects Dark Minimal */
+select {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.3s;
+
+  &,
+  &::picker(select) {
+    appearance: base-select;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+::picker(select) {
+  border: 1px solid var(--border);
+  border-top: 0;
+  z-index: 500;
+}
+
+/* Estilo para las opciones del select en modo oscuro */
+option {
+  background: #171717;
+  color: var(--text);
+  padding: 0.5rem;
+}
+
+@media (hover: hover) {
+  option:hover {
+    background: var(--border);
+  }
+}
